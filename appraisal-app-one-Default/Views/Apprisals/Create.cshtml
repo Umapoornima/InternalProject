@@ -1,0 +1,106 @@
+﻿@model Apprisal.web.App_mvc_.Data.ApprisalEnitity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ApprisalEnitity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EvoluvationPeriod" class="control-label"></label>
+                <select asp-for="EvoluvationPeriod" class="form-control">
+                    <option value="">Select Evaluation Period</option>
+                    <option value= "April-2018 to March-2019" >April-2018 to March-2019</option>
+                    <option value= "April-2019 to March-2020" >April-2019 to March-2020</option>
+                    <option value= "April-2020 to March-2021" >April-2020 to March-2021</option>
+                    <option value= "April-2021 to March-2022" >April-2021 to March-2022</option>
+                    <option value= "April-2022 to March-2023" >April-2022 to March-2023</option>
+                </select>
+                <span asp-validation-for="EvoluvationPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfJoin" class="control-label"></label>
+                <input asp-for="DateOfJoin" class="form-control" />
+                <span asp-validation-for="DateOfJoin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfLeavesTaken" class="control-label"></label>
+                <input asp-for="NumberOfLeavesTaken" class="form-control" />
+                <span asp-validation-for="NumberOfLeavesTaken" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientDelivery" class="control-label"></label>
+                <select asp-for="ClientDelivery" class="form-control" asp-items="Html.GetEnumSelectList<ClientDelivery>()"  >
+                <option value=" ">Please Select Some Value</option>
+                </select>
+                <span asp-validation-for="ClientDelivery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientDeliveryFeed" class="control-label"></label>
+                <input asp-for="ClientDeliveryFeed" class="form-control" />
+                <span asp-validation-for="ClientDeliveryFeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Responsibility" class="control-label"></label>
+                <select asp-for="Responsibility" class="form-control" asp-items="Html.GetEnumSelectList<Responsibilities>()" >
+                    <option>Please give Some Rating</option>
+                </select>
+                <span asp-validation-for="Responsibility" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResponsibilitiesFeed" class="control-label"></label>
+                <input asp-for="ResponsibilitiesFeed" class="form-control" />
+                <span asp-validation-for="ResponsibilitiesFeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Skills" class="control-label"></label>
+                <select asp-for="Skills" class="form-control" asp-items="Html.GetEnumSelectList<Skill>()" >
+                    <option>Select Skills</option>
+                </select>
+                <span asp-validation-for="Skills" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkillsFeed" class="control-label"></label>
+                <input asp-for="SkillsFeed" class="form-control" />
+                <span asp-validation-for="SkillsFeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Certifiate" class="control-label"></label>
+                <input asp-for="Certifiate" class="form-control" />
+                <span asp-validation-for="Certifiate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AboutCourse" class="control-label"></label>
+                <input asp-for="AboutCourse" class="form-control" />
+                <span asp-validation-for="AboutCourse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback" class="control-label"></label>
+                <input asp-for="Feedback" class="form-control" />
+                <span asp-validation-for="Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

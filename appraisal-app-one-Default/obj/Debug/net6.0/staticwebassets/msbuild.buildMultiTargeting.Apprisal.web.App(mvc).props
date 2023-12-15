@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Apprisal.web.App(mvc).props" />
+</Project>
